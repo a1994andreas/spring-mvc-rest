@@ -1,4 +1,4 @@
-package api.v1.model;
+package springframework.app.v1.model;
 
 import lombok.Data;
 

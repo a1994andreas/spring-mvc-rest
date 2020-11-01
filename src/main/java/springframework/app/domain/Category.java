@@ -1,4 +1,4 @@
-package domain;
+package springframework.app.domain;
 
 import lombok.Data;
 

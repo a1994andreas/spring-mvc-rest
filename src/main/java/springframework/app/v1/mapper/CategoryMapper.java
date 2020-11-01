@@ -1,7 +1,7 @@
-package api.v1.mapper;
+package springframework.app.v1.mapper;
 
-import api.v1.model.CategoryDTO;
-import domain.Category;
+import springframework.app.v1.model.CategoryDTO;
+import springframework.app.domain.Category;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -12,4 +12,5 @@ public interface CategoryMapper {
 
     CategoryDTO categoryToCategoryDTO(Category category);
 
+    Category categoryDTOToCategory(CategoryDTO categoryDTO);
 }
