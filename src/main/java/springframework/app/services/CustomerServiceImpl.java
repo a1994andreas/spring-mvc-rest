@@ -1,6 +1,7 @@
 package springframework.app.services;
 
 import org.springframework.stereotype.Service;
+import springframework.app.domain.Customer;
 import springframework.app.repositories.CustomerRepository;
 import springframework.app.v1.model.CategoryDTO;
 import springframework.app.v1.model.CustomerDTO;
@@ -33,5 +34,14 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO getCustomerById(Long id) {
         return customerMapper.customerToCustomerDTO(customerRepository.findById(id).get().populateCustomerURL());
     }
+
+    @Override
+    public CustomerDTO addCustomer(CustomerDTO customerDTO) {
+
+        Customer savedCustomer = customerRepository.save(customerMapper.customerDTOToCustomer(customerDTO));
+
+        return customerMapper.customerToCustomerDTO(savedCustomer.populateCustomerURL());
+    }
+
 
 }
